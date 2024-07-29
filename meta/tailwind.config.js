@@ -12,7 +12,8 @@ export default {
         default: '1200px'
       },
     },
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 }
