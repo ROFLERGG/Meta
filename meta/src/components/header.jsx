@@ -8,10 +8,29 @@ import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth >= 768) {
+      setMenuIsOpen(false);
+    }
+  }, [windowWidth]);
 
   useEffect(() => {
     const body = document.body;
@@ -24,11 +43,17 @@ const Header = () => {
     }
   }, [menuIsOpen]);
 
+  const navButtons = [
+    { id: 1, text: `Wave NFT's`, url: 'nft' },
+    { id: 2, text: 'Stories', url: 'stories' },
+    { id: 3, text: 'Contact', url: 'contact' },
+  ];
+
   return (
     <div>
       <header className="fixed z-20 w-full py-4">
         <div className="container">
-          <div className="flex justify-between items-center space-x-12 min-h-10 max-md:space-x-0">
+          <div className="flex justify-between items-center space-x-12 min-h-12 max-md:space-x-0">
             {/* left sides */}
             <Link to="/">
               <img src={Logo} alt="logo" />
@@ -38,21 +63,15 @@ const Header = () => {
               {/* navigation */}
               <nav>
                 <ul className="flex items-center space-x-6">
-                  <li>
-                    <Link to="" className="p-3 block leading-none">
-                      Wave NFT's
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="" className="p-3 block leading-none">
-                      Stories
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="" className="p-3 block leading-none">
-                      Contact
-                    </Link>
-                  </li>
+                  {navButtons.map((button) => {
+                    return (
+                      <li>
+                        <Link key={button.id} to={button.url} className="p-4 block leading-none">
+                          {button.text}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
               {/* links */}
@@ -83,24 +102,18 @@ const Header = () => {
         </div>
       </header>
       {/* menu */}
-      <nav className={`fixed z-10 h-[100dvh] w-full bg-neutral-950 flex justify-center duration-300 ${menuIsOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <nav className={`fixed z-10 h-[100dvh] w-full bg-neutral-800 flex justify-center duration-300 ease-in-out ${menuIsOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
         <div className="flex flex-col justify-center">
           <ul className="flex flex-1 flex-col space-y-6 justify-center text-center">
-            <li>
-              <Link to="/nft" className="p-3 block leading-none">
-                Wave NFT's
-              </Link>
-            </li>
-            <li>
-              <Link to="/stories" className="p-3 block leading-none">
-                Stories
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="p-3 block leading-none">
-                Contact
-              </Link>
-            </li>
+            {navButtons.map((button) => {
+              return (
+                <li>
+                  <Link key={button.id} to={button.url} className="p-4 block leading-none">
+                    {button.text}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           {/* links */}
           <div className="flex items-center space-x-3 mb-6">
