@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className="fixed z-20 w-full py-4">
+      <header className="fixed z-20 w-full py-4 bg-neutral-950">
         <div className="container">
           <div className="flex justify-between items-center space-x-12 min-h-12 max-md:space-x-0">
             {/* left sides */}
@@ -102,13 +102,13 @@ const Header = () => {
         </div>
       </header>
       {/* menu */}
-      <nav className={`fixed z-10 h-[100dvh] w-full bg-neutral-800 flex justify-center duration-300 ease-in-out ${menuIsOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+      <nav className={`fixed z-10 h-[100dvh] w-full bg-neutral-950 flex justify-center duration-300 ease-in-out ${menuIsOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col justify-center">
           <ul className="flex flex-1 flex-col space-y-6 justify-center text-center">
             {navButtons.map((button) => {
               return (
-                <li>
-                  <Link key={button.id} to={button.url} className="p-4 block leading-none">
+                <li key={button.id}>
+                  <Link to={button.url} className="p-4 block leading-none">
                     {button.text}
                   </Link>
                 </li>
