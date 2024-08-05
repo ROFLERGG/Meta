@@ -15,6 +15,15 @@ export default {
     extend: {
       fontFamily: {
         'mont': ["Montserrat", 'sans-serif']
+      },
+      animation: {
+        'rightToLeft': 'rightToLeft 10s linear infinite',
+      },
+      keyframes: {
+        'rightToLeft': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(calc(-100% + (-120px)))' }
+        }
       }
     },
   },
