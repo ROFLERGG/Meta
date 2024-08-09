@@ -22,7 +22,7 @@ export default {
       keyframes: {
         'rightToLeft': {
           '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(calc(-100% + (-120px)))' }
+          '100%': { transform: 'translateX(-50%)' }
         }
       }
     },

@@ -1,7 +1,17 @@
 import Layout from '../../components/layout';
 import Section from './section';
+import Tabulation from './tabulation';
 
 const Home = () => {
+  const artists = [
+    { id: 1, name: 'Mark Popson', image: 'https://picsum.photos/240' },
+    { id: 2, name: 'Pete Bentz', image: 'https://picsum.photos/240' },
+    { id: 3, name: 'Daniela Youth', image: 'https://picsum.photos/240' },
+    { id: 4, name: 'Roman Gore', image: 'https://picsum.photos/240' },
+    { id: 5, name: 'Tonya', image: 'https://picsum.photos/240' },
+    { id: 6, name: 'Ivor', image: 'https://picsum.photos/240' },
+    { id: 7, name: 'Somae Petit', image: 'https://picsum.photos/240' },
+  ];
   return (
     <Layout>
       <div className="flex flex-col">
@@ -34,6 +44,7 @@ const Home = () => {
             </div>
           </div>
         </Section>
+        {/* section 2 */}
         <Section>
           <div className="flex justify-between items-start gap-[30px] max-md:flex-col">
             {/* left side */}
@@ -52,7 +63,7 @@ const Home = () => {
             <div className="flex flex-col space-y-12 max-w-[600px]">
               {/* top */}
               <div className="flex space-x-3">
-                <div className="w-1 min-h-full bg-green-500"></div>
+                <div className="w-2 min-h-full bg-green-500"></div>
                 <h3 className="text-green-500">META WAVE NFT is your pass to Meta Record Label ecosystem. It is your access to our industry experts, established artists, and partners.</h3>
               </div>
               {/* center */}
@@ -68,22 +79,48 @@ const Home = () => {
             </div>
           </div>
         </Section>
-        <div className="py-[60px] overflow-hidden select-none">
-          <div className="flex items-center gap-[120px] whitespace-nowrap">
-            <div className="flex justify-between items-center gap-[120px] animate-rightToLeft font-mont">
-              <span className="text-7xl">ARTISTS</span>
-              <span className="text-7xl">ARTISTS</span>
-              <span className="text-7xl">ARTISTS</span>
-              <span className="text-7xl">ARTISTS</span>
-            </div>
-            <div className="flex justify-between items-center gap-[120px] animate-rightToLeft font-mont">
-              <span className="text-7xl">ARTISTS</span>
-              <span className="text-7xl">ARTISTS</span>
-              <span className="text-7xl">ARTISTS</span>
-              <span className="text-7xl">ARTISTS</span>
-            </div>
+        {/* artists */}
+        <div className="py-[60px] w-full relative flex overflow-hidden select-none whitespace-nowrap">
+          <div className="flex animate-rightToLeft">
+            <span className="text-7xl px-[60px]">ARTISTS</span>
+            <span className="text-7xl px-[60px]">ARTISTS</span>
+            <span className="text-7xl px-[60px]">ARTISTS</span>
+            <span className="text-7xl px-[60px]">ARTISTS</span>
+            <span className="text-7xl px-[60px]">ARTISTS</span>
+            <span className="text-7xl px-[60px]">ARTISTS</span>
+            <span className="text-7xl px-[60px]">ARTISTS</span>
+            <span className="text-7xl px-[60px]">ARTISTS</span>
           </div>
         </div>
+        <Section>
+          <div className="flex justify-center flex-wrap gap-[30px]">
+            {artists.map((artist) => {
+              return (
+                <div className="flex flex-col items-center">
+                  <div>
+                    <img src={artist.image} alt={`artist` + artist.id} />
+                  </div>
+                  <div>
+                    <span className="font-mono paragraph-md">{artist.name}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Section>
+        <Section>
+          <div className="flex flex-col space-y-6">
+            {/* header */}
+            <div className="flex justify-center">
+              <h2 className="font-semibold leading-tight tracking-widest whitespace-nowrap text-neutral-100">
+                MRL.
+                <span className="text-neutral-400">THE STORY.</span>
+              </h2>
+            </div>
+            {/* content */}
+            <Tabulation />
+          </div>
+        </Section>
       </div>
     </Layout>
   );
