@@ -1,0 +1,29 @@
+[
+  {
+    "number": "1",
+    "phase": "1",
+    "completed": true,
+    "title": "SPRING 2022 - PRE LAUNCH",
+    "image": "https://picsum.photos/1440/240",
+    "list": ["Website 1.2", "Discord community promotion", "MINTING WAVE NFTs"],
+    "description": "WAVE NFTs will be 100% pre-minted and launched as an OpenOcean collection"
+  },
+  {
+    "number": "2",
+    "phase": "2",
+    "completed": false,
+    "title": "SUMMER 2022 - GROWTH",
+    "image": "https://picsum.photos/1440/240",
+    "list": ["Hiring for 10 positions in", "Partnerships with main Metaverse players", "Partnerships with WEB 2.0 music destribution channels"],
+    "description": "META Record Labels is holding the first screening of aspiring artists from the list of WAVE NFT holders"
+  },
+  {
+    "number": "3",
+    "phase": "3",
+    "completed": false,
+    "title": "SPRING 2022 - YOUR NEW STAGGE",
+    "image": "https://picsum.photos/1440/240",
+    "list": ["Onboarding new partners", "First live concert in Sandjar", "Live concert in Decentrafield"],
+    "description": "We secured dates for out artists to peform in front of the live audience of Metaverse. Check the concert schedule in our"
+  }
+]

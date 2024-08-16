@@ -2,8 +2,10 @@ import Layout from '../../components/layout';
 import Section from './section';
 import Tabulation from './tabulation';
 import Circle from '../../assets/circles-in-cricle.svg';
+import useFetch from '../../hooks/useFetch';
 
 const Home = () => {
+  const [data, loading, error] = useFetch('');
   const artists = [
     { id: 1, name: 'Mark Popson', image: 'https://picsum.photos/240' },
     { id: 2, name: 'Pete Bentz', image: 'https://picsum.photos/240' },
