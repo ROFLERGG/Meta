@@ -1,6 +1,6 @@
-const Section = ({ children }) => {
+const Section = ({ className = '', children }) => {
   return (
-    <section className="py-[60px]">
+    <section className={`${className} py-[60px]`}>
       <div className="container">{children}</div>
     </section>
   );
