@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import Layout from '../../components/layout';
 import Section from './section';
 import Tabulation from './tabulation';
+import Circle from '../../assets/circles-in-cricle.svg';
 
 const Home = () => {
   const artists = [
@@ -124,29 +124,29 @@ const Home = () => {
         </Section>
         {/* image */}
         <div className="py-[60px]">
-          <img width={1440} height={240} className="object-cover h-[240px] w-full max-md:h-[120px]" src="https://picsum.photos/1440/240" alt="img" />
+          <img width={1440} height={240} className="object-cover h-[280px] w-full max-md:h-[120px]" src="https://picsum.photos/1440/240" alt="img" />
         </div>
         <Section className={'relative'}>
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-[60px]">
             {/* header */}
             <div className="flex justify-center">
               <h2 className="font-semibold leading-tight tracking-widest whitespace-nowrap text-neutral-100">ROADMAP</h2>
             </div>
             {/* content */}
             <div className="flex justify-center z-10">
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center space-y-10">
                 {/* card */}
                 <div className="flex flex-col max-w-[540px] w-full bg-neutral-800 border border-green-500 divide-y divide-green-500">
                   {/* top */}
                   <div className="flex items-center space-x-3 p-4">
-                    <h2 className="w-12 h-12 bg-green-500 flex justify-center items-center text-neutral-950">1</h2>
+                    <h2 className="flex-shrink-0 w-12 h-12 bg-green-500 flex justify-center items-center text-neutral-950">1</h2>
                     <div className="flex flex-col justify-center">
                       <p className="text-xs text-green-500">Phase 1 - completed</p>
                       <p className="text-lg uppercase">Spring 2022 - pre launch</p>
                     </div>
                   </div>
                   {/* bottom */}
-                  <div className="flex justify-between items-center space-x-6 p-4">
+                  <div className="flex justify-between items-center space-x-6 p-4 max-sm:flex-col-reverse max-sm:space-x-0 max-sm:items-start max-sm:space-y-6 max-sm:space-y-reverse">
                     <div className="flex flex-col space-y-6">
                       <ul className="list-disc list-inside text-sm">
                         <li>Website 1.2</li>
@@ -158,21 +158,13 @@ const Home = () => {
                     <img className="object-cover" width={128} height={128} src="https://picsum.photos/128" alt="" />
                   </div>
                 </div>
+                <div className="w-0.5 h-10 bg-green-500"></div>
+                <div className="w-0.5 h-10 bg-green-500"></div>
               </div>
             </div>
           </div>
           {/* circles */}
-          <div className="absolute left-0 top-0 flex justify-center items-center">
-            <div className=" flex justify-center items-center w-[672px] h-[672px] border border-green-500 rounded-full border-opacity-25">
-              <div className=" flex justify-center items-center w-[460px] h-[460px] border border-green-500 rounded-full border-opacity-40">
-                <div className=" flex justify-center items-center w-[280px] h-[280px] border border-green-500 rounded-full border-opacity-65">
-                  <div className=" flex justify-center items-center w-[160px] h-[160px] border border-green-500 rounded-full border-opacity-80">
-                    <div className=" flex justify-center items-center w-[100px] h-[100px] border border-green-500 rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* <img className="absolute -top-20 left-0" src={Circle} alt="Circle" /> */}
         </Section>
       </div>
     </Layout>
